@@ -23,17 +23,17 @@ if (Meteor.isServer) {
         //console.log(Mustache);
         Mustache.parse(template);   // optional, speeds up future uses
         var rendered = Mustache.render(template, {name: "Luke"});
-        console.log("=====simple test=====")
+        console.log("=====simple test=====");
         console.log(rendered);
 
-        console.log("=====test: read template file=====")
+        console.log("=====test: read template file=====");
         var fs = Npm.require('fs');
         //console.log(fs);
         //console.log(process.cwd());
         fs.readFile('../../../../../template_test1.txt',function(err,data){
             if (err) {
                 return console.error(err);
-            };
+            }
             template = data.toString();
             Mustache.parse(template);   // optional, speeds up future uses
             rendered = Mustache.render(template,viewRule);
@@ -49,7 +49,7 @@ var contract1={
 
 var contract2={
     u_country:"British"
-}
+};
 
 var contract=contract1;
 
@@ -63,4 +63,4 @@ var viewRule={
             return e === country
         }
     )}
-}
+};
